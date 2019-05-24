@@ -1,13 +1,13 @@
 
-public class JavaScriptCompressorListener extends JavaScriptBaseListener {
-	
-	public JavaScriptCompressorListener() {
-		System.out.println("hi");
+
+public class ECMAScriptCompressorListener extends ECMAScriptBaseListener {
+
+	public ECMAScriptCompressorListener() {
+		
 	}
 	
 	@Override
-	public void exitR(JavaScriptParser.RContext ctx) {
-		System.out.println("Yikes");
+	public void exitSourceElements(ECMAScriptParser.SourceElementsContext ctx) {
+		System.out.println("Program parsed");
 	}
-
 }

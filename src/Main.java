@@ -4,21 +4,20 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		System.out.println("hello");
-		JavaScriptCompressorListener listener = new JavaScriptCompressorListener();
+		ECMAScriptCompressorListener listener = new ECMAScriptCompressorListener();
 		
 		ANTLRInputStream input = new ANTLRInputStream(System.in);
 		
-		JavaScriptLexer lexer = new JavaScriptLexer(input);
+		ECMAScriptLexer lexer = new ECMAScriptLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		
-		JavaScriptParser parser = new JavaScriptParser(tokens);
-		ParseTree tree = parser.r();
+		ECMAScriptParser parser = new ECMAScriptParser(tokens);
+		parser.addErrorListener(new DiagnosticErrorListener(true));
+		ParseTree tree = parser.program();
 		
 		ParseTreeWalker walker = new ParseTreeWalker();
 		
 		walker.walk(listener, tree);
 		
-		System.out.println(tree.toStringTree());
 	}
 }

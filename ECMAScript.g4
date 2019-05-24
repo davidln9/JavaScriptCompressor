@@ -25,7 +25,6 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 grammar ECMAScript;
-
 @parser::members {
   
     /**
