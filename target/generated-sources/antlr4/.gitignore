@@ -14,3 +14,7 @@
 /ECMAScriptLexer.tokens
 /ECMAScriptListener.java
 /ECMAScriptParser.java
+/JavaScriptParser.interp
+/JavaScriptParser.tokens
+/JavaScriptParserBaseListener.java
+/JavaScriptParserListener.java
